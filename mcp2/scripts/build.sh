@@ -21,4 +21,11 @@ fi
 echo "Installing vendored packages from vendor.txt..."
 .venv-pyodide/bin/pip install -t src/vendor -r vendor.txt
 
+echo "Removing built-in packages ..."
+for x in anyio httpx pydantic starlette
+do
+  rm -rf src/vendor/${x} src/vendor/${x}-*.dist-info
+done
+
+rm -rf srv/vendor/bin
 echo "Build completed successfully!"
