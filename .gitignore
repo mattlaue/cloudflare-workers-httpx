@@ -1,0 +1,6 @@
+/.idea
+/.wrangler
+venv
+vendor
+node_modules
+.venv-pyodite
